@@ -1,0 +1,29 @@
+server/target
+
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+buggy/.dart_tool/
+buggy/.idea/
+buggy/flutter-plugins
+buggy/flutter-plugins-dependencies
+buggy/packages
+buggy/pub-cache/
+buggy/pub/
+buggy/build/
+
+# Web related
+buggy/lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+buggy/android/
+buggy/ios/*
+buggy/linux/*
+buggy.web/*
