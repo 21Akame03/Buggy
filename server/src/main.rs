@@ -2,15 +2,9 @@
 
 mod mysql_conn;
 use mysql_conn::select_database;
-use rocket::serde::{Serialize, Deserialize};
-use rocket::serde::json::{Json, Value, json};
+use rocket::serde::json::Json;
 
-#[derive(Serialize, Deserialize)]
-#[serde(crate = "rocket::serde")]
-struct Test {
-    name: String,
-    id: i32
-}
+
 
 #[get("/", format="json")]
 fn index() -> Json<Vec<mysql_conn::models::Test>> {
@@ -21,10 +15,5 @@ fn index() -> Json<Vec<mysql_conn::models::Test>> {
 
 #[launch]
 fn rocket() -> _ {
-    // let conn = match mysql_conn::create_connection() {
-    //     Ok(x) => x,
-    //     Err(err) => panic!("Error creating connection: {}", err)
-    // };
-    
     rocket::build().mount("/", routes![index])
 }
